@@ -1,0 +1,14 @@
+header{
+    height: 6.5rem;
+}
+
+.meme-view{
+    width: 21rem;
+    height: 21rem;
+}
+
+.meme-text{
+    height: 2rem;
+    padding: 0.5rem;
+    font-size: 1rem;
+}
