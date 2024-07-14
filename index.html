@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Generador de Memes</title>
+</head>
+
+<body>
+
+    <header id="nav" class="nav">
+        <h1>Generador de Memes</h1>
+        <div class="head-container">
+            <button id="btn-img" class="btn-head"><img src="./media/file-image.png" alt="Símbolo de imagen" class="icon-head">Imagen</button>
+            <button id="btn-text" class="btn-head"><img src="./media/message-text.png" alt="Símbolo de texto" class="icon-head">Texto</button>
+            <button id="btn-dark" class="btn-head"><img src="./media/bulb(2).png" alt="Símbolo de luz" class="icon-head">Modo oscuro</button>
+        </div>
+    </header>
+
+   <main id="main-container" class="main-container">
+
+   <div class="meme-view">
+    <p class="meme-text">TOP TEXT</p>
+    <div id="meme-img" class="meme-img"></div>
+    <p class="meme-text">BOTTOM TEXT</p>
+   </div>
+   <button class="download">
+    <img src="./media/download.png" alt="Símbolo de descarga">Descargar Meme</button>
+
+    </main>
+
+   <aside id="side-bar" class="side-bar">
+    <section id="sect-editor" class="sect-editor">
+        <h3>IMAGEN</h3>
+        <div class="div-url">
+            <h3>URL</h3>
+            <input id="url-text" type="text">
+        </div>
+        <h3>Fondo</h3>
+        <div class="set-color">
+            <input type="color" value="#FFFFFF">
+            <span id="blend-mode-color" aria-hidden="true">#FFFFFF</span>
+            <select name="" id="">
+                <option value="unset">Ninguno</option>
+                <option value="lighten">Aclarar</option>
+                <option value="darken">Oscurecer</option>
+                <option value="difference">Diferencia</option>
+                <option value="luminosity">Luminosidad</option>
+                <option value="multiply">Multiplicar</option>
+            </select>
+        </div>
+        <div>
+            <h3>Filtros</h3>
+            <div>
+                <label for="brillo-rango">BRILLO</label>
+                <input type="range" min="0" max="1" value="1" step="0.1" class="slider1">
+            </div>
+            <div>
+                <label for="opacidad-rango">OPACIDAD</label>
+                <input type="range" min="0" max="1" value="1" step="0.1">
+            </div>
+            <div>
+                <label for="contraste-rango">CONTRASTE</label>
+                <input type="range" min="100" max="1000" value="100">
+            </div>
+            <div>
+                <label for="desenfoque-rango">DESENFOQUE</label>
+                <input type="range" min="0" max="10" value="0" step="0.1">
+            </div>
+            <div>
+                <label for="grises-rango">ESCALA DE GRISES</label>
+                <input type="range" min="0" max="100" value="0">
+            </div>
+            <div>
+                <label for="sepia-rango">SEPIA</label>
+                <input type="range" min="0" max="100" value="0">
+            </div>
+            <div>
+                <label for="hue-rango">HUE</label>
+                <input type="range" min="0" max="360" value="0">
+            </div>
+            <div>
+                <label for="saturado-rango">SATURADO</label>
+                <input type="range" min="100" max="1000" value="100" step="10">
+            </div>
+            <div>
+                <label for="negativo-rango">NEGATIVO</label>
+                <input type="range" min="0" max="1" value="0" step="0.1">
+            </div>
+        </div>
+        <div></div>
+        <button>Reestablecer filtros</button>
+    </section>
+
+    <section id="side-text" class="side-text">
+        
+        <div side-text-container>
+
+        <h2 class="title-text">
+            TEXTO
+        </h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae iste pariatur repellat qui amet odio.</p>
+
+        </div>
+    </section>
+   </aside>
+
+    <script src="app.js"></script>
+</body>
+</html>
