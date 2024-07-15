@@ -39,9 +39,9 @@
         </div>
         <h3>Fondo</h3>
         <div class="set-color">
-            <input type="color" value="#FFFFFF">
+            <input id="color-back" type="color" value="#FFFFFF">
             <span id="blend-mode-color" aria-hidden="true">#FFFFFF</span>
-            <select name="" id="">
+            <select name="" id="select-img-type">
                 <option value="unset">Ninguno</option>
                 <option value="lighten">Aclarar</option>
                 <option value="darken">Oscurecer</option>
@@ -54,53 +54,157 @@
             <h3>Filtros</h3>
             <div>
                 <label for="brillo-rango">BRILLO</label>
-                <input type="range" min="0" max="1" value="1" step="0.1" class="slider1">
+                <input id="brillo" type="range" min="0" max="1" value="1" step="0.1" class="slider1">
             </div>
             <div>
                 <label for="opacidad-rango">OPACIDAD</label>
-                <input type="range" min="0" max="1" value="1" step="0.1">
+                <input id="opacidad" type="range" min="0" max="1" value="1" step="0.1">
             </div>
             <div>
                 <label for="contraste-rango">CONTRASTE</label>
-                <input type="range" min="100" max="1000" value="100">
+                <input id="contraste" type="range" min="100" max="1000" value="100">
             </div>
             <div>
                 <label for="desenfoque-rango">DESENFOQUE</label>
-                <input type="range" min="0" max="10" value="0" step="0.1">
+                <input id="desenfoque" type="range" min="0" max="10" value="0" step="0.1">
             </div>
             <div>
                 <label for="grises-rango">ESCALA DE GRISES</label>
-                <input type="range" min="0" max="100" value="0">
+                <input id="grises" type="range" min="0" max="100" value="0">
             </div>
             <div>
                 <label for="sepia-rango">SEPIA</label>
-                <input type="range" min="0" max="100" value="0">
+                <input id="sepia" type="range" min="0" max="100" value="0">
             </div>
             <div>
                 <label for="hue-rango">HUE</label>
-                <input type="range" min="0" max="360" value="0">
+                <input id="hue-r" type="range" min="0" max="360" value="0">
             </div>
             <div>
                 <label for="saturado-rango">SATURADO</label>
-                <input type="range" min="100" max="1000" value="100" step="10">
+                <input id="saturado" type="range" min="100" max="1000" value="100" step="10">
             </div>
             <div>
                 <label for="negativo-rango">NEGATIVO</label>
-                <input type="range" min="0" max="1" value="0" step="0.1">
+                <input id="negativo" type="range" min="0" max="1" value="0" step="0.1">
             </div>
         </div>
         <div></div>
-        <button>Reestablecer filtros</button>
+        <button id="reset-filters">Reestablecer filtros</button>
     </section>
 
     <section id="side-text" class="side-text">
         
         <div side-text-container>
-
+         
         <h2 class="title-text">
             TEXTO
         </h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae iste pariatur repellat qui amet odio.</p>
+        <div class="panel-txt">
+            <h3 class="panel-title-text">SUPERIOR</h3>
+            <input id="top-text" class="top-text" type="text">
+            <label for="upper-text">TOP TEXT</label>
+            <div>
+                <input type="checkbox" id="no-top-text">
+                <label for="no-top-text">Sin texto superior</label>
+            </div>
+        </div >
+        <div class="panel-txt">
+            <h3 class="panel-title-text">INFERIOR</h3>
+            <input id="bottom-text" class="bottom-text" type="text">
+            <label for="upper-text">BOTTOM TEXT</label>
+            <div>
+                <input type="checkbox" id="no-bottom-text">
+                <label for="no-bottom-text">Sin texto inferior</label>
+            </div>
+        </div >
+
+        <div class="panel-txt">
+            <h3 class="panel-title-text">FUENTE</h3>
+            <select name="Family font" id="txt-font-type" class="panel-input" aria-label="Family font">
+                <option value="Arial">Arial</option>
+                <option value="Arial Black">Arial Black</option>
+                <option value="American Typewriter">American Typewriter</option>
+                <option value="Andale Mono">Andale Mono</option>
+                <option value="Comic Sans MS">Comic Sans MS</option>
+                <option value="Helvetica">Helvetica</option>
+                <option value="Impact" selected="">Impact</option>
+                <option value="Verdana">Verdana</option>
+                <option value="Times New Roman">Times New Roman</option>
+            </select>
+            
+            <div class="size-container">
+                <input type="number" name="Font size" aria-label="Font-size" class="panel-input" id="text-size" min="12" value="40">
+                <div class="side-btns">
+                    <button id="side-left-btn" class="button-side" aria-label="Align left">
+                        <i></i>
+                    </button>
+                    <button id="side-center-btn" class="button-side" aria-label="Align center">
+                        <i></i>
+                    </button>
+                    <button id="side-right-btn" class="button-side" aria-label="Align right">
+                        <i></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+<!------colores text------------->
+        <div class="panel-txt">
+
+        <div class="colores-text">
+            <h3>Color</h3>
+            <div class="color-txt">
+                <input name="Text color" type="color" id="txt-color-choose" value="#000000" aria-label="Text color">
+                <span id="txt-color-value" aria-hidden="true">#000000</span>
+            </div>
+        </div>
+
+        <div class="colores-text">
+            <h3>Fondo</h3>
+            <div class="background-txt">
+                <input name="Text back color" type="color" id="txt-background-color-choose" value="#FFFFFF" aria-label="Text back color">
+                <span id="txt-color-value" aria-hidden="true">#FFFFFF</span>
+            </div>
+        </div>
+
+        <div class="container-check">
+            <input type="checkbox" id="txt-no-background-check">
+            <label for="txt-no-background-check">Fondo
+                transparente</label>
+        </div>
+        </div>
+
+        <div class="panel-txt">
+            <h3>CONTORNO</h3>
+            <div class="contour-btns">
+                <button id="no-contour-btn" class="no-contour-btn">
+                    Ninguno
+                </button>
+                <button id="light-contour-btn" class="light-contour-btn">
+                    Claro
+                </button>
+                <button id="dark-contour-btn" class="dark-contour-btn">
+                    Oscuro
+                </button>
+            </div>
+        </div>
+
+        <div class="panel-txt">
+            <h3>ESPACIADO</h3>
+            <input type="number" id="padding-txt" class="padding-txt" aria-label="Espaciado" min="10" max="50" value="35">
+        </div>
+
+        <div class="panel-txt">
+            <h3>INTERLINEADO</h3>
+            <select id="interlineado-txt" class="padding-txt" aria-label="Interlineado">
+                <option value="0.8">0.8</option>
+                <option value="1">1</option>
+                <option value="1.2" selected="">1.2</option>
+                <option value="1.5">1.5</option>
+                <option value="2">2</option>
+                <option value="2.5">2.5</option>
+              </select>
+        </div>
 
         </div>
     </section>

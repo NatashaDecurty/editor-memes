@@ -40,7 +40,7 @@ const colorCambio = function () {
 
 toggle.addEventListener('click', colorCambio);
 
-// función
+// función imagen
 
 const urlText = document.getElementById('url-text');
 const memeImg = document.getElementById('meme-img');
@@ -54,6 +54,92 @@ function actualizarImagen(event) {
 
 urlText.addEventListener('input', actualizarImagen)
 
+//fondo color
+
+const colorBack = document.getElementById('color-back');
+const blendMode = document.getElementById('blend-mode-color');
+
+
+const chooseColor = function (e) {
+    blendMode.innerText = e.target.value.toUpperCase()
+    memeImg.style.backgroundColor = e.target.value
+    }
+
+colorBack.addEventListener('input', chooseColor)
+
+// filtros
+
+// *poner color fffhfhf
+
+let brillo = document.getElementById('brillo');
+let opacidad = document.getElementById('opacidad');
+let contraste = document.getElementById('contraste');
+let desenfoque = document.getElementById('desenfoque');
+let grises = document.getElementById('grises');
+let sepia = document.getElementById('sepia');
+let hueR = document.getElementById('hue-r');
+let saturado = document.getElementById('saturado');
+let negativo = document.getElementById('negativo');
+let resetFilters = document.getElementById('reset-filters');
+
+brillo.addEventListener('input', function(e) {
+    let brightness_value = e.target.value
+    memeImg.style.filter = `brightness(${brightness_value})`
+})
+
+opacidad.addEventListener('input', function(e) {
+    let opacity_value = e.target.value
+    memeImg.style.filter = `opacity(${opacity_value})`
+})
+
+contraste.addEventListener('input', function(e) {
+    let contrast_value = e.target.value
+    memeImg.style.filter = `contrast(${contrast_value}%)`
+})
+
+desenfoque.addEventListener('input', function(e) {
+    let blur_value = e.target.value
+    memeImg.style.filter = `blur(${blur_value}px)`
+})
+
+grises.addEventListener('input', function(e) {
+    let grayscale_value = e.target.value
+    memeImg.style.filter = `grayscale(${grayscale_value}%)`
+})
+
+sepia.addEventListener('input', function(e) {
+    let sepia_value = e.target.value
+    memeImg.style.filter = `sepia(${sepia_value}%)`
+})
+
+hueR.addEventListener('input', function(e) {
+    let hue_rotate_value = e.target.value
+    memeImg.style.filter = `hue-rotate(${hue_rotate_value}deg)`
+})
+
+saturado.addEventListener('input', function(e) {
+    let saturate_value = e.target.value
+    memeImg.style.filter = `saturate(${saturate_value}%)`
+})
+
+negativo.addEventListener('input', function(e) {
+    let invert_value = e.target.value
+    memeImg.style.filter = `invert(${invert_value})`
+})
+
+const reestablecerFiltros = () => {
+    brillo.value = 1
+    opacidad.value = 1
+    contraste.value = 100
+    desenfoque.value = 0
+    grises.value = 0
+    sepia.value = 0
+    hueR.value = 0
+    saturado.value = 100
+    negativo.value = 0
+  }
+
+  resetFilters.addEventListener('click', reestablecerFiltros)
 
 
 
