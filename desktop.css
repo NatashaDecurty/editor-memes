@@ -114,6 +114,7 @@ h3{
     border: none;
     border-radius: 3%;
     color: var(--fontblanc);
+    cursor: pointer;
 }
 
 .hidden{
@@ -138,11 +139,18 @@ h3{
 .side-text-container{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
-    padding: 3rem;
 }
 
 .title-text{
+    padding-top: 2rem;
+    margin: 1rem;
     color: var(--fontblanc);
+}
+
+.panel-txt{
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem;
 }

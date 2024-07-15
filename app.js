@@ -1,3 +1,16 @@
+// descarga
+const btnDownload = document.getElementById('btn-download');
+const memeView = document.getElementById('meme-view');
+
+function downloadMeme () {
+    domtoimage.toBlob(memeView).then(function (blob) {
+        SVGAnimatedPreserveAspectRatio(blob, "mi-meme.png")
+    }
+        )
+}
+
+btnDownload.addEventListener('click', downloadMeme);
+
 //secciones
 
 const btnImg = document.getElementById('btn-img');
@@ -46,7 +59,7 @@ const urlText = document.getElementById('url-text');
 const memeImg = document.getElementById('meme-img');
 
 function actualizarImagen(event) {
-    console.log(event.target.value);
+
     if (event.target.value.length !== 0) {
         memeImg.style.backgroundImage = `url(${event.target.value})`;
     }
@@ -54,7 +67,7 @@ function actualizarImagen(event) {
 
 urlText.addEventListener('input', actualizarImagen)
 
-//fondo color
+//fondo color img
 
 const colorBack = document.getElementById('color-back');
 const blendMode = document.getElementById('blend-mode-color');
@@ -67,9 +80,8 @@ const chooseColor = function (e) {
 
 colorBack.addEventListener('input', chooseColor)
 
-// filtros
+// filtros img
 
-// *poner color fffhfhf
 
 let brillo = document.getElementById('brillo');
 let opacidad = document.getElementById('opacidad');
@@ -142,7 +154,77 @@ const reestablecerFiltros = () => {
   resetFilters.addEventListener('click', reestablecerFiltros)
 
 
+// TEXTO
+
+let topTextImput = document.getElementById('top-text');
+let bottomTextImput = document.getElementById('bottom-text');
+const topText = document.getElementById('meme-txt-top');
+const bottomText = document.getElementById('meme-txt-bottom');
+const checkTop = document.getElementById('no-top-text');
+const checkBottom = document.getElementById('no-bottom-text');
+
+//1
+
+function crearTexto(e) {
+    topText.innerText = topTextImput.value
+    bottomText.innerText = bottomTextImput.value
+}
+
+topTextImput.addEventListener('input', crearTexto);
+bottomTextImput.addEventListener('input', crearTexto);
+
+const noText = () => {
+    if (checkTop.checked) {
+        topText.classList.add('hidden')
+    } else {
+        topText.classList.remove('hidden')
+    }
+
+    if (checkBottom.checked) {
+        bottomText.classList.add('hidden')
+    } else {
+        bottomText.classList.remove('hidden')
+    }
+}
+
+checkTop.addEventListener('change', noText);
+checkBottom.addEventListener('change', noText);
 
 
+//2 font
 
+const fontSelect = document.getElementById('txt-font-type');
+const sizeFont = document.getElementById('size-font');
+const sideLeftBtn = document.getElementById('side-left-btn');
+const sideCenterBtn = document.getElementById('side-center-btn');
+const sideRightBtn = document.getElementById('side-right-btn');
+
+const changeFont = () => {
+    const font = fontSelect.value
+    topText.style.fontFamily = font
+    bottomText.style.fontFamily = font
+}
+
+const changeSize = () => {
+
+    const size = sizeFont.value;
+
+    topText.style.fontSize = `${size}px`;
+    bottomText.style.fontSize = `${size}px`;
+}
+
+const alignText = (align) => {
+    topText.style.textAlign = align
+    bottomText.style.textAlign = align
+}
+
+fontSelect.addEventListener('change', changeFont)
+
+sizeFont.addEventListener('change', changeSize)
+
+sideLeftBtn.addEventListener('click', () => alignText('left'))
+sideCenterBtn.addEventListener('click', () => alignText('center'))
+sideRightBtn.addEventListener('click', () => alignText('Right'))
+
+// color txt
 

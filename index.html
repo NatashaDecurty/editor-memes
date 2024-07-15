@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"></script>
     <title>Generador de Memes</title>
 </head>
 
@@ -20,13 +22,15 @@
 
    <main id="main-container" class="main-container">
 
-   <div class="meme-view">
-    <p class="meme-text">TOP TEXT</p>
+   <div id="meme-view" class="meme-view">
+    <p id="meme-txt-top" class="meme-text">TOP TEXT</p>
     <div id="meme-img" class="meme-img"></div>
-    <p class="meme-text">BOTTOM TEXT</p>
+    <p id="meme-txt-bottom" class="meme-text">BOTTOM TEXT</p>
    </div>
-   <button class="download">
-    <img src="./media/download.png" alt="Símbolo de descarga">Descargar Meme</button>
+
+   <button id="btn-download" class="download">
+    Descargar Meme</button>
+   
 
     </main>
 
@@ -95,11 +99,11 @@
 
     <section id="side-text" class="side-text">
         
-        <div side-text-container>
+        <div class="side-text-container">
          
-        <h2 class="title-text">
+        <h3 class="title-text">
             TEXTO
-        </h2>
+        </h3>
         <div class="panel-txt">
             <h3 class="panel-title-text">SUPERIOR</h3>
             <input id="top-text" class="top-text" type="text">
@@ -134,7 +138,7 @@
             </select>
             
             <div class="size-container">
-                <input type="number" name="Font size" aria-label="Font-size" class="panel-input" id="text-size" min="12" value="40">
+                <input type="number" id="size-font" name="Font size" aria-label="Font-size" class="panel-input" id="text-size" min="12" value="40">
                 <div class="side-btns">
                     <button id="side-left-btn" class="button-side" aria-label="Align left">
                         <i></i>
