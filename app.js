@@ -4,7 +4,7 @@ const memeView = document.getElementById('meme-view');
 
 function downloadMeme () {
     domtoimage.toBlob(memeView).then(function (blob) {
-        SVGAnimatedPreserveAspectRatio(blob, "mi-meme.png")
+        saveAs(blob, "mi-meme.png")
     }
         )
 }
@@ -49,6 +49,7 @@ const colorCambio = function () {
     nav.classList.toggle('active');
     main.classList.toggle('active2');
     sideBar.classList.toggle('active3');
+
 }
 
 toggle.addEventListener('click', colorCambio);
@@ -228,3 +229,79 @@ sideRightBtn.addEventListener('click', () => alignText('Right'))
 
 // color txt
 
+const colorTxt = document.getElementById('txt-color-choose');
+const txtColorValue = document.getElementById('txt-color-value');
+const backColorTxt = document.getElementById('txt-background-color-choose');
+const backTxtColorValue = document.getElementById('b-txt-color-value');
+const checkBackColor = document.getElementById('txt-no-background-check');
+
+
+const changeTxtColor = () => {
+    const color = colorTxt.value.toUpperCase()
+
+    txtColorValue.innerText = color
+    topText.style.color = color
+    bottomText.style.color = color
+}
+
+const changeBackTxtColor = () => {
+    if (!checkBackColor.checked) {
+        const color = backColorTxt.value
+
+        backTxtColorValue.innerText = color.toUpperCase()
+        topText.style.backgroundColor = color
+        bottomText.style.backgroundColor = color
+    } else {
+        topText.style.backgroundColor = 'transparent'
+        bottomText.style.backgroundColor = 'transparent'
+    }
+}
+colorTxt.addEventListener('input', changeTxtColor)
+backColorTxt.addEventListener('input', changeBackTxtColor)
+checkBackColor.addEventListener('change', changeBackTxtColor)
+
+// contornos
+
+const outNone = document.getElementById('no-contour-btn');
+const outWhite = document.getElementById('light-contour-btn');
+const outBlack = document.getElementById('dark-contour-btn');
+
+const noOutline = function () {
+    topText.style.textShadow = 'none'
+    bottomText.style.textShadow = 'none'
+}
+const lightOutline = function () {
+    topText.style.textShadow = '0 0 3px #FFFFFF, 0 0 5px #FFFFFF'
+    bottomText.style.textShadow = '0 0 3px #FFFFFF, 0 0 5px #FFFFFF'
+}
+const darkOutline = function () {
+    topText.style.textShadow = '0 0 3px #000000, 0 0 5px #000000'
+    bottomText.style.textShadow = '0 0 3px #000000, 0 0 5px #000000'
+}
+
+outNone.addEventListener('click', noOutline)
+outWhite.addEventListener('click', lightOutline)
+outBlack.addEventListener('click', darkOutline)
+
+// espaciado
+
+const spaceInput = document.getElementById('padding-txt');
+
+const makeSpace = () => {
+    const padding = spaceInput.value;
+    topText.style.padding = `${padding}px`;
+    bottomText.style.padding = `${padding}px`;
+}
+
+  spaceInput.addEventListener('input', makeSpace)
+
+  //interlineado
+
+  const lineSpace = document.getElementById('interlineado-txt');
+
+const makeLineH = function(e) {
+    topText.style.lineHeight = e.target.value
+    bottomText.style.lineHeight = e.target.value
+}
+
+lineSpace.addEventListener('input', makeLineH)

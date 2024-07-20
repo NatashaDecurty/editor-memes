@@ -117,21 +117,46 @@ h3{
     cursor: pointer;
 }
 
+#txt-background-color-choose{
+    position: relative;
+ 
+}
+#txt-color-value{
+    position: absolute;
+}
+#b-txt-color-value{
+    position: absolute;
+}
+
 .hidden{
     display: none;
 }
 
 .active{
     background-color: #e0e0e0;
+}
+
+.active h1{
     color: var(--fontblack);
 }
+.active button {
+    color: var(--fontblack);
+}
+
 .active2{
     background-color: #eeeeee;
 }
+
 .active3{
     background-color: #fafafa;
+}
+.active3 h3 {
     color: var(--fontblack);
 }
+.active3 label {
+    color: var(--fontblack);
+}
+
 
 .side-text{
     display: none;
@@ -144,7 +169,7 @@ h3{
 }
 
 .title-text{
-    padding-top: 2rem;
+    padding-top: 1.5rem;
     margin: 1rem;
     color: var(--fontblanc);
 }
@@ -152,5 +177,56 @@ h3{
 .panel-txt{
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     padding: 0.5rem;
+}
+
+.panel-title-text{
+    padding-top: 0.2rem;
+
+}
+
+.top-text{
+   margin: 0.2rem;
+}
+
+.bottom-text{
+    margin: 0.2rem;
+}
+.label-panel{
+    font-size: 0.9rem;
+    margin: 0.4rem;
+}
+.panel-txt h3{
+    font-size: 1rem;
+}
+.panel-txt-font{
+   display: flex;
+   flex-direction: column;
+
+}
+
+.panel-input-size{
+    width: 50%;
+
+}
+.side-btn{
+    height: 1.4rem;
+    width: 2rem;
+}
+
+.panel-color{
+    display: flex;
+    flex-direction: row;
+}
+.colores-text{
+    padding: 0.7rem;
+}
+.color-txt{
+    display: flex;
+    flex-direction: column;
+}
+.background-txt{
+    display: flex;
+    flex-direction: column;
 }
